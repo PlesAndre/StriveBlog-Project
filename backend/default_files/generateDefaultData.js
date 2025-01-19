@@ -66,5 +66,6 @@ const blogPostCsv = new Parser().parse(blogPosts);
 
 // fs = File System, salva i file authorCsv e blogPostCsv in un file chiamato "esempio.csv" nella cartella selezionata "./default_files"
 fs.writeFileSync("./default_files/blogPosts.csv", blogPostCsv);
+fs.writeFileSync("./default_files/authors.csv", authorCsv);
 
 console.log("CSV files generated");

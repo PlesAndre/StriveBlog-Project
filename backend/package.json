@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "generate": "node default_files/generateDefaultAuthors.js"
+    "generate": "node default_files/generateDefaultData.js"
   },
   "keywords": [],
   "author": "",

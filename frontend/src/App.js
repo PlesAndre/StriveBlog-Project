@@ -11,6 +11,7 @@ import AuthorDetails from "./components/authors/AuthorDetails";
 import NewAuthor from "./components/authors/NewAuthor";
 import PostDetails from "./components/blog_posts/PostDetails";
 import NewPost from "./components/blog_posts/NewPost";
+import NotFound from "./components/blog_posts/404 error/NotFound";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Route path="/author/new" element={<NewAuthor />} />
         <Route path="/blog/:id" element={<PostDetails />} />
         <Route path="/post/new" element={<NewPost />} />
-        <Route path="*" element={<div>404</div>} /> --- --- --- --- da sistemare
+        <Route path="*" element={<NotFound />} /> 
         <Route />
       </Routes>
       <Footer />

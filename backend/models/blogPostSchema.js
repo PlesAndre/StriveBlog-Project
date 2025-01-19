@@ -11,6 +11,7 @@ const blogPostSchema = new mongoose.Schema({
   },
   autore: String,
   contenuto: String,
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
 });
 
 const BlogPost = mongoose.model(

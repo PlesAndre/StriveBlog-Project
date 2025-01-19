@@ -17,6 +17,7 @@ import cors from "cors"; // Importa "cors" che permette la comunicazione tra FE 
 import connectDB from "./config/db.js"; // Importa il file di connessione al DB
 import { router as authorRouter } from "./routes/authorRoutes.js";
 import { router as blogPostRouter } from "./routes/blogPostRoutes.js";
+import { router as commentRouter } from "./routes/commentRoutes.js";
 
 const server = express(); // Crea il server con express()
 //express.json() e cors() sono dei middlewears
@@ -38,6 +39,8 @@ server.use("/api/authors", authorRouter); // Quando verrà chiamato l'endpoint (
 
 server.use("/api/blog_posts", blogPostRouter);
 
+server.use("/api/comments", commentRouter);
+
 // // Come chiamare i dati nella BE
 // const consoleAuthors = async () => {
 //   const consAuth = await getAllAuthors();
@@ -50,7 +53,7 @@ server.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-// Immagina che il server sia come un centralino telefonico:
+//Esempio server come un centralino telefonico:
 
 // server.get("/") è come dire: "Se qualcuno chiama il numero principale e non aggiunge estensioni, rispondi dicendo 'Questa è la mia backend'".
 // server.use("/api/authors", authorRouter) è come dire: "Se qualcuno chiama aggiungendo /api/authors, inoltra la chiamata a un ufficio specializzato (il router authorRouter) che sa gestire meglio quel tipo di richiesta".
