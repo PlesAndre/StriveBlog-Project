@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router";
 import "./style.css";
+import CommentArea from "./commentArea/CommentArea";
 
 export default function PostDetails() {
   const { id } = useParams();
@@ -91,7 +92,7 @@ export default function PostDetails() {
             <h1 className="title-authors">Post Details</h1>
           </Col>
         </Row>
-        <Row>
+        <Row className="mb-5">
           <Card style={{ width: "25rem" }}>
             <Card.Body>
               <Card.Title>{dataPost.titolo}</Card.Title>
@@ -161,6 +162,12 @@ export default function PostDetails() {
             <Button variant="danger" className="mt-2" onClick={deletePost}>
               Delete Post
             </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col className="p-0 mt-5">
+            <CommentArea />
           </Col>
         </Row>
       </Container>

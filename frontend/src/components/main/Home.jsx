@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Stili di react-bootstrap
-import { Button, Col, Container } from "react-bootstrap";
+import { Button, Col, Container, Form } from "react-bootstrap";
 
 // react-router-dom
 import { Link } from "react-router-dom";
@@ -11,6 +11,12 @@ import "./style.css";
 import BlogPosts from "../blog_posts/BlogPosts";
 
 export default function Home() {
+  const [searchPost, setSearchPost] = useState("");
+
+  const handleSearch = (event) => {
+    setSearchPost(event.target.value);
+  };
+
   return (
     <Container fluid="sm">
       {/* TITOLO DEL MAIN */}
@@ -23,6 +29,18 @@ export default function Home() {
             AUTHORS
           </Link>
         </Button>
+
+        <Form className="d-flex">
+          <Form.Control
+            type="search"
+            className="border border-black"
+            placeholder="Search post..."
+            aria-label="Search"
+            value={searchPost}
+            onChange={handleSearch}
+          />
+        </Form>
+
         {/* PULSANTE AGGIUNGI POST */}
         <Button variant="dark" type="button" className="mb-2">
           <Link to="/post/new" className="link">
@@ -32,7 +50,7 @@ export default function Home() {
       </Col>
 
       <Col>
-        <BlogPosts />
+        <BlogPosts searchPost={searchPost} />
       </Col>
     </Container>
   );

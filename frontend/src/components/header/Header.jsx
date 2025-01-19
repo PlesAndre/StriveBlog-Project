@@ -1,7 +1,7 @@
 import React from "react";
 
 // Stili di react-bootstrap
-import { Container, Navbar } from "react-bootstrap";
+import { Container,Navbar } from "react-bootstrap";
 
 // Importo il logo dalla folder assets
 import logo from "../../assets/logo.png";

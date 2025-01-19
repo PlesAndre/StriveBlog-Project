@@ -3,15 +3,15 @@ import { Col, Container, Row } from "react-bootstrap";
 import PostCard from "./PostCard";
 import { Link, useParams } from "react-router-dom";
 
-export default function BlogPosts() {
+export default function BlogPosts({ searchPost }) {
   const [posts, setPosts] = useState([]);
   const [count, setPageCount] = useState(0);
+  const [filteredPost, setFilteredPost] = useState([]);
 
   const { page } = useParams();
 
   const fetchBlogPosts = async () => {
     try {
-      console.log(`Fetch dalla pagina ${page}`);
       const response = await fetch(
         `http://localhost:3001/api/blog_posts/page/${page}`
       );
@@ -37,13 +37,25 @@ export default function BlogPosts() {
   useEffect(() => {
     fetchBlogPosts();
     fetchPagesNumbers();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
+
+  useEffect(() => {
+    if (searchPost) {
+      const lowerCaseTitle = searchPost.toLowerCase();
+      const filtered = posts.filter((post) => post.titolo && post.titolo.toLowerCase().includes(lowerCaseTitle)
+      );
+      setFilteredPost(filtered);
+    } else {
+      // Se non c'è un termine di ricerca, mostra tutti i post
+      setFilteredPost(posts);
+    }
+  }, [searchPost, posts]);
 
   return (
     <Container>
       <Row>
-        {posts.map((post) => (
+        {filteredPost.map((post) => (
           <PostCard {...post} key={post._id} />
         ))}
       </Row>
