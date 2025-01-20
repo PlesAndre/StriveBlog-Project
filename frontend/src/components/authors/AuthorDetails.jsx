@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router";
 import "./style.css";
 
 export default function AuthorDetails() {
-  const { id } = useParams(); // Ottiene l'ID dalla URL
+  const { id } = useParams(); // Ottiene l'id dalla URL
 
   const [nome, setNome] = useState("");
   const [cognome, setCognome] = useState("");
@@ -42,6 +42,7 @@ export default function AuthorDetails() {
     }
   };
 
+  // Funzione per la modifica all'autore
   const editAuthor = async () => {
     try {
       const response = await fetch(`http://localhost:3001/api/authors/${id}`, {
@@ -59,6 +60,7 @@ export default function AuthorDetails() {
     }
   };
 
+  // Funzione per la cancellazione dell'autore
   const deleteAuthor = async () => {
     try {
       const response = await fetch(`http://localhost:3001/api/authors/${id}`, {

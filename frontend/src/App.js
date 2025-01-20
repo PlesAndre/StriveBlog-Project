@@ -25,8 +25,7 @@ function App() {
         <Route path="/author/new" element={<NewAuthor />} />
         <Route path="/blog/:id" element={<PostDetails />} />
         <Route path="/post/new" element={<NewPost />} />
-        <Route path="*" element={<NotFound />} /> 
-        <Route />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>

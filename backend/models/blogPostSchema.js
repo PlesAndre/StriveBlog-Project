@@ -14,6 +14,8 @@ const blogPostSchema = new mongoose.Schema({
   comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
 });
 
+// comments = è definito un array di oggetti dove all'interno fa riferimento al modello "Comment" in questo caso referencing
+
 const BlogPost = mongoose.model(
   process.env.BLOG_POST_COLLECTION,
   blogPostSchema
