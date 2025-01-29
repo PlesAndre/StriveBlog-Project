@@ -1,6 +1,6 @@
 // Pacchetti da installare dal terminale
 // npm init -y = inizializza una cartella npm
-// npm install nodemon --save -dev = refresh automatico del DB (--save -dev, lo installa temporaneamente, solo per il progetto in locale)
+// npm install nodemon --save-dev = refresh automatico del DB (--save -dev, lo installa temporaneamente, solo per il progetto in locale)
 // npm install express = installa il framewrok Express.js, facilita la creazione dei server con Node.js
 // npm install mongoose = installa mongoose per il DB
 // npm cors = autorizzazione tra FE e BE
