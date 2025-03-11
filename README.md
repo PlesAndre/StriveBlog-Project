@@ -14,26 +14,28 @@ Nonostante fosse un progetto complesso, in particolare per la parte backend, con
 - JavaScript (per la logica dell'applicazione)
 
 ## Installazione e utilizzo
-Requisiti
-Prima di iniziare, assicurati di avere i seguenti strumenti installati:
+Requisiti prima di iniziare, assicurati di avere i seguenti strumenti installati:
 
 Node.js: Puoi scaricarlo da qui: https://nodejs.org/en
+
 MongoDB: Puoi scaricare e avviare MongoDB in locale o utilizzare una versione cloud (ad esempio, MongoDB Atlas). 
 https://www.mongodb.com/products/platform/atlas-database
 
 Passaggi per l'installazione
+
 Clona il repository:
 
 git clone https://github.com/PlesAndre/StriveBlog-Project.git
 Vai nella cartella del progetto e installa le dipendenze:
-npm install
+- npm install
 
 Configura il database MongoDB:
 - Se usi MongoDB in locale, assicurati che il tuo server MongoDB sia in esecuzione.
 - Se usi MongoDB Atlas, sostituisci la stringa di connessione al database nel file di configurazione con quella del tuo cluster su MongoDB Atlas.
   
 Avvia il server backend:
-npm start
+- npm start
+
 Una volta avviato il server, l'applicazione sarà disponibile su http://localhost:3000.
 
 Puoi quindi interagire con il sito per creare e visualizzare blog, aggiungere autori e navigare tra i contenuti.
