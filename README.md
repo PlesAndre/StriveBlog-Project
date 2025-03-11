@@ -24,7 +24,7 @@ https://www.mongodb.com/products/platform/atlas-database
 Passaggi per l'installazione
 Clona il repository:
 
-git clone https://github.com/tuo-username/strive-blog.git
+git clone https://github.com/PlesAndre/StriveBlog-Project.git
 Vai nella cartella del progetto e installa le dipendenze:
 npm install
 
